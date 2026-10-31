@@ -1,0 +1,29 @@
+check,failures
+Branches: missing primary keys,0
+Branches: duplicate primary keys,0
+Plans: missing primary keys,0
+Plans: duplicate primary keys,0
+Employees: missing primary keys,0
+Employees: duplicate primary keys,0
+Members: missing primary keys,0
+Members: duplicate primary keys,0
+Leads: missing primary keys,0
+Leads: duplicate primary keys,0
+Memberships: missing primary keys,0
+Memberships: duplicate primary keys,0
+Payment_Schedule: missing primary keys,0
+Payment_Schedule: duplicate primary keys,0
+Payments: missing primary keys,0
+Payments: duplicate primary keys,0
+Attendance: missing primary keys,0
+Attendance: duplicate primary keys,0
+Memberships.Member_ID -> Members.Member_ID,0
+Memberships.Branch_ID -> Branches.Branch_ID,0
+Memberships.Plan_ID -> Plans.Plan_ID,0
+Payments.Membership_ID -> Memberships.Membership_ID,0
+Attendance.Member_ID -> Members.Member_ID,0
+Attendance.Membership_ID -> Memberships.Membership_ID,0
+Payment_Schedule.Membership_ID -> Memberships.Membership_ID,0
+Net cash matches signed payments for every contract,0
+Adjusted value = net cash + outstanding for every contract,0
+Overdue between zero and outstanding for every contract,0

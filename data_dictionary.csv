@@ -1,0 +1,107 @@
+Table,Field,Arabic_Meaning,Definition
+Branches,Branch_ID,كود الفرع,Join key. See README for relationships.
+Branches,Branch_Name,اسم الفرع,Synthetic training value; see table grain in README.
+Branches,Area,المنطقة,Synthetic training value; see table grain in README.
+Branches,Governorate,المحافظة,Synthetic training value; see table grain in README.
+Branches,Latitude,خط العرض,"Synthetic training coordinate, not a real gym location."
+Branches,Longitude,خط الطول,"Synthetic training coordinate, not a real gym location."
+Branches,Location_Type,نوع موقع الخريطة,Synthetic training value; see table grain in README.
+Branches,Opening_Date,تاريخ افتتاح الفرع,ISO 8601 date; blank means not applicable.
+Branches,Manager_ID,كود مدير الفرع,Join key. See README for relationships.
+Branches,Capacity_At_Once,السعة المتزامنة الافتراضية,"Illustrative concurrent visitor capacity, not total member count."
+Branches,Currency,العملة,Synthetic training value; see table grain in README.
+Plans,Plan_ID,كود باقة الاشتراك,Join key. See README for relationships.
+Plans,Membership_Type,نوع الاشتراك,Synthetic training value; see table grain in README.
+Plans,Duration_Months,مدة الاشتراك بالشهور,Synthetic training value; see table grain in README.
+Plans,List_Price_EGP,السعر المعلن بالجنيه,Synthetic training value; see table grain in README.
+Plans,Access,الفروع المسموح دخولها,Synthetic training value; see table grain in README.
+Plans,Freeze_Allowance_Days,أقصى أيام تجميد للباقة,Synthetic training value; see table grain in README.
+Employees,Employee_ID,كود الموظف,Join key. See README for relationships.
+Employees,Employee_Name,اسم الموظف,Synthetic training value; see table grain in README.
+Employees,Branch_ID,كود الفرع,Join key. See README for relationships.
+Employees,Role,المسمى الوظيفي,Synthetic training value; see table grain in README.
+Employees,Hire_Date,تاريخ التعيين,ISO 8601 date; blank means not applicable.
+Employees,Employment_Status,حالة التوظيف,Synthetic training value; see table grain in README.
+Employees,Monthly_Base_Salary_EGP,الراتب الأساسي الشهري بالجنيه,Synthetic training value; see table grain in README.
+Employees,Commission_Rate,نسبة عمولة افتراضية,Illustrative rate only. No payroll or commission payout ledger is supplied.
+Employees,Email,بريد تجريبي غير مستخدم,Uses reserved .invalid domain. Not a real contact.
+Employees,Phone_Test_Only,معرّف اختبار وليس رقم هاتف,Intentionally non-dialable. Names may coincidentally resemble real people.
+Members,Member_ID,كود العضو,Join key. See README for relationships.
+Members,Member_Name,اسم العضو,Synthetic training value; see table grain in README.
+Members,Gender,النوع,Synthetic training value; see table grain in README.
+Members,Birth_Date,تاريخ الميلاد,ISO 8601 date; blank means not applicable.
+Members,Phone_Test_Only,معرّف اختبار وليس رقم هاتف,Intentionally non-dialable. Names may coincidentally resemble real people.
+Members,Email,بريد تجريبي غير مستخدم,Uses reserved .invalid domain. Not a real contact.
+Members,Home_Branch_ID,الفرع الأساسي للعضو,Join key. See README for relationships.
+Members,Join_Date,تاريخ أول اشتراك,ISO 8601 date; blank means not applicable.
+Members,Acquisition_Source,مصدر اكتساب العضو,Matches the converted lead source for the member.
+Members,Acquisition_Salesperson_ID,كود السيلز الذي اكتسب العضو,Join key. See README for relationships.
+Members,Assigned_Trainer_ID,كود المدرب المتابع إن وجد,Join key. See README for relationships.
+Members,Status_As_Of_2026_09_30,الحالة في ٣٠ سبتمبر ٢٠٢٦,Static historical snapshot. Not TODAY-based.
+Leads,Lead_ID,كود العميل المحتمل,Join key. See README for relationships.
+Leads,Created_Date,تاريخ تسجيل العميل المحتمل,ISO 8601 date; blank means not applicable.
+Leads,Branch_ID,كود الفرع,Join key. See README for relationships.
+Leads,Salesperson_ID,كود مسؤول السيلز,Join key. See README for relationships.
+Leads,Lead_Name,اسم العميل المحتمل,Synthetic training value; see table grain in README.
+Leads,Phone_Test_Only,معرّف اختبار وليس رقم هاتف,Intentionally non-dialable. Names may coincidentally resemble real people.
+Leads,Source,مصدر العميل المحتمل,Synthetic training value; see table grain in README.
+Leads,Stage,مرحلة متابعة العميل,Synthetic training value; see table grain in README.
+Leads,Last_Contact_Date,آخر تاريخ تواصل,ISO 8601 date; blank means not applicable.
+Leads,Next_Follow_Up_Date,تاريخ المتابعة المخطط,ISO 8601 date; blank means not applicable.
+Leads,Lost_Reason,سبب خسارة العميل,Synthetic training value; see table grain in README.
+Leads,Converted_Member_ID,كود العضو بعد التحويل,Join key. See README for relationships.
+Leads,Conversion_Date,تاريخ التحول إلى عضو,ISO 8601 date; blank means not applicable.
+Memberships,Membership_ID,كود عقد الاشتراك,Join key. See README for relationships.
+Memberships,Member_ID,كود العضو,Join key. See README for relationships.
+Memberships,Branch_ID,كود الفرع,Join key. See README for relationships.
+Memberships,Salesperson_ID,كود مسؤول السيلز,Join key. See README for relationships.
+Memberships,Plan_ID,كود باقة الاشتراك,Join key. See README for relationships.
+Memberships,Sale_Date,تاريخ حجز المبيعات,ISO 8601 date; blank means not applicable.
+Memberships,Start_Date,بداية الاشتراك,"Date-only, ISO 8601. No overlapping contracts per member."
+Memberships,Scheduled_End_Date,النهاية الأصلية قبل التجميد,ISO 8601 date; blank means not applicable.
+Memberships,Effective_End_Date,آخر يوم صالح بعد التجميد أو الإلغاء,"Inclusive date. Freeze extends scheduled end, cancellation can shorten access."
+Memberships,Sale_Type,اشتراك جديد أو تجديد,Synthetic training value; see table grain in README.
+Memberships,Gross_Fee_EGP,السعر قبل الخصم بالجنيه,Synthetic training value; see table grain in README.
+Memberships,Discount_Pct,نسبة الخصم,Synthetic training value; see table grain in README.
+Memberships,Discount_EGP,قيمة الخصم بالجنيه,Synthetic training value; see table grain in README.
+Memberships,Contract_Value_EGP,قيمة العقد بعد الخصم وقبل رصيد الإلغاء,Synthetic training value; see table grain in README.
+Memberships,Cancellation_Date,تاريخ إلغاء العقد إن وجد,ISO 8601 date; blank means not applicable.
+Memberships,Credit_EGP,رصيد الإلغاء المسترد,"Cancelled, fully paid contracts may have a partial refund. This simulation records the matching cash refund."
+Memberships,Adjusted_Value_EGP,قيمة العقد بعد الخصم ورصيد الإلغاء,"Contract_Value_EGP minus Credit_EGP. Booked value, not recognized accounting revenue."
+Memberships,Freeze_Start_Date,أول يوم تجميد,ISO 8601 date; blank means not applicable.
+Memberships,Freeze_End_Date,آخر يوم تجميد شامل,ISO 8601 date; blank means not applicable.
+Memberships,Freeze_Days,عدد أيام التجميد,Synthetic training value; see table grain in README.
+Memberships,Status_As_Of_2026_09_30,الحالة في ٣٠ سبتمبر ٢٠٢٦,Static historical snapshot. Not TODAY-based.
+Memberships,Net_Cash_Collected_EGP,التحصيل الصافي بعد المرتجعات,SUM of signed Payments.Amount_EGP for this Membership_ID.
+Memberships,Outstanding_EGP,المتبقي من قيمة العقد المعدلة,"Adjusted_Value_EGP minus Net_Cash_Collected_EGP, including future installments."
+Memberships,Overdue_EGP,الأقساط المتأخرة حتى تاريخ التقييم,Unpaid installments with Due_Date strictly before 2026-09-30.
+Payment_Schedule,Installment_ID,كود القسط,Join key. See README for relationships.
+Payment_Schedule,Membership_ID,كود عقد الاشتراك,Join key. See README for relationships.
+Payment_Schedule,Due_Date,تاريخ استحقاق القسط,ISO 8601 date; blank means not applicable.
+Payment_Schedule,Amount_Due_EGP,قيمة القسط المستحقة,Gross installment obligation before cancellation credit; refunds are separate signed payment entries.
+Payment_Schedule,Amount_Paid_EGP,قيمة التحصيل المخصصة للقسط,Synthetic training value; see table grain in README.
+Payment_Schedule,Balance_EGP,رصيد القسط غير المحصل,Synthetic training value; see table grain in README.
+Payment_Schedule,Status_As_Of_2026_09_30,الحالة في ٣٠ سبتمبر ٢٠٢٦,Static historical snapshot. Not TODAY-based.
+Payments,Payment_ID,كود حركة الدفع,Join key. See README for relationships.
+Payments,Membership_ID,كود عقد الاشتراك,Join key. See README for relationships.
+Payments,Member_ID,كود العضو,Join key. See README for relationships.
+Payments,Branch_ID,كود الفرع,Join key. See README for relationships.
+Payments,Payment_Date,تاريخ حركة الدفع,ISO 8601 date; blank means not applicable.
+Payments,Entry_Type,تحصيل أو مرتجع,Synthetic training value; see table grain in README.
+Payments,Amount_EGP,مبلغ موجب للتحصيل وسالب للمرتجع,Synthetic training value; see table grain in README.
+Payments,Payment_Method,وسيلة الدفع,Synthetic training value; see table grain in README.
+Payments,Installment_ID,كود القسط,Join key. See README for relationships.
+Payments,Collected_By_Employee_ID,كود موظف الاستقبال المحصل,Join key. See README for relationships.
+Attendance,Attendance_ID,كود الزيارة,Join key. See README for relationships.
+Attendance,Member_ID,كود العضو,Join key. See README for relationships.
+Attendance,Membership_ID,كود عقد الاشتراك,Join key. See README for relationships.
+Attendance,Visit_Branch_ID,الفرع الفعلي للزيارة,Join key. See README for relationships.
+Attendance,Visit_Date,تاريخ الزيارة,ISO 8601 date; blank means not applicable.
+Attendance,Check_In,وقت الدخول,Local Cairo wall-clock time for simulation. Not a UTC timestamp.
+Attendance,Check_Out,وقت الخروج,Local Cairo wall-clock time for simulation. Same calendar date.
+Attendance,Visit_Minutes,مدة الزيارة بالدقائق,Synthetic training value; see table grain in README.
+Sales_Targets,Month_Start,بداية شهر التارجت,Synthetic training value; see table grain in README.
+Sales_Targets,Branch_ID,كود الفرع,Join key. See README for relationships.
+Sales_Targets,Salesperson_ID,كود مسؤول السيلز,Join key. See README for relationships.
+Sales_Targets,New_Member_Target,تارجت الأعضاء الجدد,"Compare only to contracts with Sale_Type=New, not all renewals."
+Sales_Targets,Booked_Value_Target_EGP,تارجت قيمة العقود المعدلة,"Compare to adjusted contract values sold in the same month by the salesperson, including renewals."

@@ -1,0 +1,22 @@
+{
+  "period_start": "2025-10-01",
+  "snapshot_date": "2026-09-30",
+  "currency": "EGP",
+  "data_type": "synthetic",
+  "branches": 6,
+  "members": 1200,
+  "memberships": 1641,
+  "leads": 3400,
+  "visits": 38774,
+  "payment_transactions": 2573,
+  "contract_value_egp": 14673425.0,
+  "adjusted_contract_value_egp": 14317625.0,
+  "collections_egp": 13910540.0,
+  "signed_refunds_egp": -355800.0,
+  "net_cash_egp": 13554740.0,
+  "outstanding_egp": 762885.0,
+  "overdue_egp": 247216.0,
+  "cash_to_adjusted_value": 0.9467170707432273,
+  "lead_conversion_rate": 0.35294117647058826,
+  "checks_passed": 28
+}
