@@ -125,7 +125,7 @@ def main():
         leads=("Lead_ID", "count"), converted=("Stage", lambda v: v.eq("Converted").sum()))
     channels["conversion_rate"] = channels.converted / channels.leads
     channels.to_csv(REPORTS / "acquisition_summary.csv")
-    tables["Data_Dictionary"].to_csv(ROOT / "data" / "data_dictionary.csv", index=False)
+    tables["Data_Dictionary"][["Table", "Field", "Definition"]].to_csv(ROOT / "data" / "data_dictionary.csv", index=False)
     bar_chart(branches.set_index("Area").net_cash_egp, "branch_cash.png", "Net cash collected (EGP millions)")
     bar_chart(channels.conversion_rate, "channel_conversion.png", "Observed lead conversion (%)", percent=True)
     print(json.dumps(metrics, indent=2))
