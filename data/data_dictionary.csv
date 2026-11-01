@@ -1,0 +1,107 @@
+Table,Field,Definition
+Branches,Branch_ID,Join key. See README for relationships.
+Branches,Branch_Name,Synthetic training value; see table grain in README.
+Branches,Area,Synthetic training value; see table grain in README.
+Branches,Governorate,Synthetic training value; see table grain in README.
+Branches,Latitude,"Synthetic training coordinate, not a real gym location."
+Branches,Longitude,"Synthetic training coordinate, not a real gym location."
+Branches,Location_Type,Synthetic training value; see table grain in README.
+Branches,Opening_Date,ISO 8601 date; blank means not applicable.
+Branches,Manager_ID,Join key. See README for relationships.
+Branches,Capacity_At_Once,"Illustrative concurrent visitor capacity, not total member count."
+Branches,Currency,Synthetic training value; see table grain in README.
+Plans,Plan_ID,Join key. See README for relationships.
+Plans,Membership_Type,Synthetic training value; see table grain in README.
+Plans,Duration_Months,Synthetic training value; see table grain in README.
+Plans,List_Price_EGP,Synthetic training value; see table grain in README.
+Plans,Access,Synthetic training value; see table grain in README.
+Plans,Freeze_Allowance_Days,Synthetic training value; see table grain in README.
+Employees,Employee_ID,Join key. See README for relationships.
+Employees,Employee_Name,Synthetic training value; see table grain in README.
+Employees,Branch_ID,Join key. See README for relationships.
+Employees,Role,Synthetic training value; see table grain in README.
+Employees,Hire_Date,ISO 8601 date; blank means not applicable.
+Employees,Employment_Status,Synthetic training value; see table grain in README.
+Employees,Monthly_Base_Salary_EGP,Synthetic training value; see table grain in README.
+Employees,Commission_Rate,Illustrative rate only. No payroll or commission payout ledger is supplied.
+Employees,Email,Uses reserved .invalid domain. Not a real contact.
+Employees,Phone_Test_Only,Intentionally non-dialable. Names may coincidentally resemble real people.
+Members,Member_ID,Join key. See README for relationships.
+Members,Member_Name,Synthetic training value; see table grain in README.
+Members,Gender,Synthetic training value; see table grain in README.
+Members,Birth_Date,ISO 8601 date; blank means not applicable.
+Members,Phone_Test_Only,Intentionally non-dialable. Names may coincidentally resemble real people.
+Members,Email,Uses reserved .invalid domain. Not a real contact.
+Members,Home_Branch_ID,Join key. See README for relationships.
+Members,Join_Date,ISO 8601 date; blank means not applicable.
+Members,Acquisition_Source,Matches the converted lead source for the member.
+Members,Acquisition_Salesperson_ID,Join key. See README for relationships.
+Members,Assigned_Trainer_ID,Join key. See README for relationships.
+Members,Status_As_Of_2026_09_30,Static historical snapshot. Not TODAY-based.
+Leads,Lead_ID,Join key. See README for relationships.
+Leads,Created_Date,ISO 8601 date; blank means not applicable.
+Leads,Branch_ID,Join key. See README for relationships.
+Leads,Salesperson_ID,Join key. See README for relationships.
+Leads,Lead_Name,Synthetic training value; see table grain in README.
+Leads,Phone_Test_Only,Intentionally non-dialable. Names may coincidentally resemble real people.
+Leads,Source,Synthetic training value; see table grain in README.
+Leads,Stage,Synthetic training value; see table grain in README.
+Leads,Last_Contact_Date,ISO 8601 date; blank means not applicable.
+Leads,Next_Follow_Up_Date,ISO 8601 date; blank means not applicable.
+Leads,Lost_Reason,Synthetic training value; see table grain in README.
+Leads,Converted_Member_ID,Join key. See README for relationships.
+Leads,Conversion_Date,ISO 8601 date; blank means not applicable.
+Memberships,Membership_ID,Join key. See README for relationships.
+Memberships,Member_ID,Join key. See README for relationships.
+Memberships,Branch_ID,Join key. See README for relationships.
+Memberships,Salesperson_ID,Join key. See README for relationships.
+Memberships,Plan_ID,Join key. See README for relationships.
+Memberships,Sale_Date,ISO 8601 date; blank means not applicable.
+Memberships,Start_Date,"Date-only, ISO 8601. No overlapping contracts per member."
+Memberships,Scheduled_End_Date,ISO 8601 date; blank means not applicable.
+Memberships,Effective_End_Date,"Inclusive date. Freeze extends scheduled end, cancellation can shorten access."
+Memberships,Sale_Type,Synthetic training value; see table grain in README.
+Memberships,Gross_Fee_EGP,Synthetic training value; see table grain in README.
+Memberships,Discount_Pct,Synthetic training value; see table grain in README.
+Memberships,Discount_EGP,Synthetic training value; see table grain in README.
+Memberships,Contract_Value_EGP,Synthetic training value; see table grain in README.
+Memberships,Cancellation_Date,ISO 8601 date; blank means not applicable.
+Memberships,Credit_EGP,"Cancelled, fully paid contracts may have a partial refund. This simulation records the matching cash refund."
+Memberships,Adjusted_Value_EGP,"Contract_Value_EGP minus Credit_EGP. Booked value, not recognized accounting revenue."
+Memberships,Freeze_Start_Date,ISO 8601 date; blank means not applicable.
+Memberships,Freeze_End_Date,ISO 8601 date; blank means not applicable.
+Memberships,Freeze_Days,Synthetic training value; see table grain in README.
+Memberships,Status_As_Of_2026_09_30,Static historical snapshot. Not TODAY-based.
+Memberships,Net_Cash_Collected_EGP,SUM of signed Payments.Amount_EGP for this Membership_ID.
+Memberships,Outstanding_EGP,"Adjusted_Value_EGP minus Net_Cash_Collected_EGP, including future installments."
+Memberships,Overdue_EGP,Unpaid installments with Due_Date strictly before 2026-09-30.
+Payment_Schedule,Installment_ID,Join key. See README for relationships.
+Payment_Schedule,Membership_ID,Join key. See README for relationships.
+Payment_Schedule,Due_Date,ISO 8601 date; blank means not applicable.
+Payment_Schedule,Amount_Due_EGP,Gross installment obligation before cancellation credit; refunds are separate signed payment entries.
+Payment_Schedule,Amount_Paid_EGP,Synthetic training value; see table grain in README.
+Payment_Schedule,Balance_EGP,Synthetic training value; see table grain in README.
+Payment_Schedule,Status_As_Of_2026_09_30,Static historical snapshot. Not TODAY-based.
+Payments,Payment_ID,Join key. See README for relationships.
+Payments,Membership_ID,Join key. See README for relationships.
+Payments,Member_ID,Join key. See README for relationships.
+Payments,Branch_ID,Join key. See README for relationships.
+Payments,Payment_Date,ISO 8601 date; blank means not applicable.
+Payments,Entry_Type,Synthetic training value; see table grain in README.
+Payments,Amount_EGP,Synthetic training value; see table grain in README.
+Payments,Payment_Method,Synthetic training value; see table grain in README.
+Payments,Installment_ID,Join key. See README for relationships.
+Payments,Collected_By_Employee_ID,Join key. See README for relationships.
+Attendance,Attendance_ID,Join key. See README for relationships.
+Attendance,Member_ID,Join key. See README for relationships.
+Attendance,Membership_ID,Join key. See README for relationships.
+Attendance,Visit_Branch_ID,Join key. See README for relationships.
+Attendance,Visit_Date,ISO 8601 date; blank means not applicable.
+Attendance,Check_In,Local Cairo wall-clock time for simulation. Not a UTC timestamp.
+Attendance,Check_Out,Local Cairo wall-clock time for simulation. Same calendar date.
+Attendance,Visit_Minutes,Synthetic training value; see table grain in README.
+Sales_Targets,Month_Start,Synthetic training value; see table grain in README.
+Sales_Targets,Branch_ID,Join key. See README for relationships.
+Sales_Targets,Salesperson_ID,Join key. See README for relationships.
+Sales_Targets,New_Member_Target,"Compare only to contracts with Sale_Type=New, not all renewals."
+Sales_Targets,Booked_Value_Target_EGP,"Compare to adjusted contract values sold in the same month by the salesperson, including renewals."
